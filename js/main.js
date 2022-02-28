@@ -1,4 +1,4 @@
-let display = document.querySelector('.display');
+let displayCurrent = document.querySelector('.display__current');
 const body = document.querySelector("body");
 
 const buttons = document.querySelectorAll(".button");
@@ -15,9 +15,9 @@ function calculator() {
     }
     case "number": {
       if (testForZero()) {
-          display.innerText = this.innerText;
+          displayCurrent.innerText = this.innerText;
       } else if (testForLength()) {
-          display.innerText += this.innerText;
+          displayCurrent.innerText += this.innerText;
       }
       break;
     }
@@ -26,31 +26,30 @@ function calculator() {
       break;
     }
   }
-  
   overNineThousand();
 }
 
 function clear() {
-  display.innerText = "0";
+  displayCurrent.innerText = "0";
   overNineThousand();
 }
 
 function backspace() {
-  display.innerText = display.innerText.slice(0, -1);
-  if (display.innerText === "") display.innerText = "0";
+  displayCurrent.innerText = displayCurrent.innerText.slice(0, -1);
+  if (displayCurrent.innerText === "") displayCurrent.innerText = "0";
   overNineThousand();
 }
 
 function testForZero() {
-  return (display.innerText === "0");
+  return (displayCurrent.innerText === "0");
 }
 
 function testForLength() {
-  return (display.innerText.length < 7)
+  return (displayCurrent.innerText.length < 7)
 }
 
 function overNineThousand() {
-  if (display.innerText > 9000) {
+  if (displayCurrent.innerText > 9000) {
     body.classList.add("over__nine__thousand");
   } else {
     body.classList.remove("over__nine__thousand")

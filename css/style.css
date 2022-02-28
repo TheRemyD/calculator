@@ -39,11 +39,21 @@ body {
 .display {
   background: var(--nt-600);
   text-align: right;
-  height: calc((5 * var(--fs)) + (4 * var(--pad)));
-  padding: calc(2 * var(--pad));
-  font-size: calc(5 * var(--fs));
   border: 2px solid var(--nt-900);
   border-radius: calc(2 * var(--pad)) calc(2 * var(--pad)) 0 0;
+}
+
+.display__current {
+  padding: calc(2 * var(--pad));
+  height: calc((5 * var(--fs)) + (4 * var(--pad)));
+  font-size: calc(5 * var(--fs));
+}
+
+.display__full {
+  width: 100%;
+  height: calc(2 * var(--pad) + calc(1.5 * var(--fs)));
+  padding: calc(1 * var(--pad));
+  font-size: calc(1.5 * var(--fs));
 }
 
 .buttons {
@@ -178,4 +188,8 @@ body {
 .over__nine__thousand {
   background: url("https://media.giphy.com/media/tPKoWQJk3cEbC/giphy.gif") no-repeat;
   background-size: cover;
+}
+
+.hidden {
+  visibility: hidden;
 }
