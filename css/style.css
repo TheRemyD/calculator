@@ -21,6 +21,7 @@
 
 body {
   background: var(--bg-900);
+  background-size: cover;
   display: grid;
   place-items: center;
   height: 100vh;
@@ -172,4 +173,9 @@ body {
 .system {
   background: var(--ac-900);
   color: var(--nt-100);
+}
+
+.over__nine__thousand {
+  background: url("https://media.giphy.com/media/tPKoWQJk3cEbC/giphy.gif") no-repeat;
+  background-size: cover;
 }
