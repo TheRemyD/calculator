@@ -4,7 +4,8 @@
 
   --nt-100: rgb(223, 222, 222);
   --nt-200: rgb(153, 153, 153);
-  --nt-900: rgb(66, 66, 66);
+  --nt-600: rgb(61, 60, 60);
+  --nt-900: rgb(36, 35, 35);
 
   --ac-400: rgb(236, 179, 101);
   --ac-600: rgb(6, 70, 99);
@@ -27,18 +28,21 @@ body {
 }
 
 .calculator {
-  max-width: 400px;
+  max-width: 360px;
   box-shadow: 0 0 43px 17px var(--ac-900);
-  border-radius: 2rem;
+  border-radius: calc(2 * var(--pad));
+  border: 2px solid var(--nt-900);
   overflow: hidden;
 }
 
-#display {
-  background: var(--nt-900);
+.display {
+  background: var(--nt-600);
   text-align: right;
-  height: 70px;
-  padding: calc(2 * var(--pad)) var(--pad);
-  font-size: calc(2.5 * var(--fs));
+  height: calc((5 * var(--fs)) + (4 * var(--pad)));
+  padding: calc(2 * var(--pad));
+  font-size: calc(5 * var(--fs));
+  border: 2px solid var(--nt-900);
+  border-radius: calc(2 * var(--pad)) calc(2 * var(--pad)) 0 0;
 }
 
 .buttons {
@@ -57,6 +61,7 @@ body {
 
 #zero {
   grid-area: zero;
+  border-bottom-left-radius: calc(2 * var(--pad));
 }
 
 #one {
@@ -134,24 +139,37 @@ body {
 #equals {
   grid-area: equal;
   background: var(--ac-400);
-  vertical-align: middle;
+  border-bottom-right-radius: (2 * var(--pad));
+  line-height: 10;
+  color: var(--nt-900);
+
 }
 
 .button {
   text-decoration: none;
   padding: calc(2 * var(--pad));
   font-size: calc(2 * var(--fs));
+  font-weight: bold;
   text-align: center;
+}
+
+.button:active,
+#equals:active {
+  background: var(--nt-200);
+  color: var(--nt-900);
 }
 
 .number {
   background: var(--nt-100);
+  color: var(--nt-900);
 }
 
 .operator {
   background: var(--ac-600);
+  color: var(--nt-100);
 }
 
 .system {
   background: var(--ac-900);
+  color: var(--nt-100);
 }
